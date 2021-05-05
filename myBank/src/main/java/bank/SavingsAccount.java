@@ -1,9 +1,11 @@
-package pl.waw.sgh.bank;
+package bank;
+
+import javax.persistence.Entity;
 
 /**
  * Created by prubac on 4/15/2016.
  */
-
+@Entity
 public class SavingsAccount extends Account {
 
     public SavingsAccount() {
