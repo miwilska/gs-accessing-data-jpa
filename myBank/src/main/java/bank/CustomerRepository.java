@@ -1,10 +1,15 @@
 package bank;
 
-import org.springframework.data.repository.CrudRepository;
-
 import java.util.List;
 
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-    List<Customer> findByLastName(String lastName);
+@RepositoryRestResource(collectionResourceRel = "customer", path = "customer")
+public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long> {
+
+    List<Customer> findByLastName(@Param("lastName") String lastName);
+
+    List<Customer> findByFirstName(@Param("firstName")String firstName);
 }
