@@ -10,6 +10,7 @@ import java.math.RoundingMode;
  * Created by prubac on 4/15/2016.
  */
 @Entity
+@Table(name = "KONTA")
 public abstract class Account {
   @Id
   @GeneratedValue(strategy= GenerationType.AUTO)
