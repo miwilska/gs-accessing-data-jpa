@@ -21,18 +21,18 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	//@Bean
+	@Bean
 	public CommandLineRunner demo(CustomerRepository repository, AccountRepository accountRepository) {
 		return (args) -> {
 			// save a couple of customers
 
-			Customer c1 = new Customer("Jack", "Bauer");
-			Customer c2 = new Customer("Chloe", "O'Brian");
+			Customer c1 = new Customer("Jan", "Kowalski");
+			Customer c2 = new Customer("Stanislaw", "Nowak");
 			repository.save(c1);
 			repository.save(c2);
-			repository.save(new Customer("Kim", "Bauer"));
-			repository.save(new Customer("David", "Palmer"));
-			repository.save(new Customer("Michelle", "Dessler"));
+			repository.save(new Customer("Maria", "Kowalska"));
+			repository.save(new Customer("Dawid", "Pipsztycki"));
+			repository.save(new Customer("Michalina", "Dare"));
 
 			accountRepository.save(new SavingsAccount(c1));
 			accountRepository.save(new DebitAccount(c1));
